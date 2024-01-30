@@ -14,6 +14,13 @@ def execute_query(connection, query):
     cursor.execute(query)
     return cursor.fetchall()
 
+def fetch_all_users(connection):
+    cursor = connection.cursor()
+    query = """SELECT * from users"""
+    cursor.execute(query)
+    return cursor.fetchall()
+
+
 
 def close_connection(connection):
     connection.close()
